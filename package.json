@@ -1,10 +1,11 @@
 {
   "name": "v3-use",
-  "version": "1.0.1",
+  "version": "1.0.2",
+  "description": "Using vue3.x composition api in react-hooks style.",
   "main": "dist/index.js",
   "license": "MIT",
-  "author": "ismufang",
-  "description": "Using vue3.x composition api in react-hooks style.",
+  "author": "@ismufang",
+  "homepage": "https://github.com/ismufang/v3-use",
   "keywords": [
     "hook",
     "vue3hooks",
