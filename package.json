@@ -1,0 +1,33 @@
+{
+  "name": "v3-use",
+  "version": "1.0.1",
+  "main": "dist/index.js",
+  "license": "MIT",
+  "author": "ismufang",
+  "description": "Using vue3.x composition api in react-hooks style.",
+  "keywords": [
+    "hook",
+    "vue3hooks",
+    "vueHook",
+    "vue-use",
+    "v3-use",
+    "vue3-use"
+  ],
+  "scripts": {
+    "watch": "rollup -c --watch",
+    "build": "cross-env NODE_ENV=production rollup -c"
+  },
+  "devDependencies": {
+    "cross-env": "^7.0.3",
+    "rollup": "^2.62.0",
+    "rollup-plugin-commonjs": "^10.1.0",
+    "rollup-plugin-dts": "^3.0.2",
+    "rollup-plugin-node-resolve": "^5.2.0",
+    "rollup-plugin-terser": "^7.0.2",
+    "rollup-plugin-typescript2": "^0.30.0",
+    "rollup-plugin-uglify": "^6.0.4",
+    "rollup-plugin-vue": "^6.0.0",
+    "typescript": "^4.5.4",
+    "vue": "3.2.26"
+  }
+}
