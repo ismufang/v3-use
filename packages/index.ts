@@ -1,8 +1,11 @@
-import useBoolean from './useBoolean/index'
-import useState from './useState/index'
+import useState from './useState'
+import useToggle from './useToggle'
+import useBoolean from './useBoolean'
+
 
 export {
     // State
-    useBoolean,
     useState,
+    useToggle,
+    useBoolean,
 }

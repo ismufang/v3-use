@@ -2,14 +2,15 @@
     <div>
         <div class="title">Hooks Test</div>
         <div>
-            <UseBoolean />
             <UseState />
+            <UseToggle />
+            <UseBoolean />
         </div>
     </div>
 </template>
 
 <script setup lang="ts">
-import { UseBoolean, UseState } from '../../components'
+import { UseState, UseToggle, UseBoolean } from '../../components'
 </script>
 
 <style scoped lang="scss">

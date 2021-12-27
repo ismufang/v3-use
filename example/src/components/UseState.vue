@@ -1,6 +1,6 @@
 <template>
     <hook-layout>
-        <template v-slot:title>useBoolean</template>
+        <template v-slot:title>useState</template>
         <template v-slot:default>
             <div>{{ state }}</div>
             <button @click="setState(1)">setState(1)</button>
