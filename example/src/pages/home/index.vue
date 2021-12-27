@@ -5,12 +5,13 @@
             <UseState />
             <UseToggle />
             <UseBoolean />
+            <UseCounter />
         </div>
     </div>
 </template>
 
 <script setup lang="ts">
-import { UseState, UseToggle, UseBoolean } from '../../components'
+import { UseState, UseToggle, UseBoolean, UseCounter } from '../../components'
 </script>
 
 <style scoped lang="scss">

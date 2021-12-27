@@ -1,24 +1,19 @@
-import { Ref, ref } from "vue";
+import { Ref, ref } from 'vue'
 
-type ActionParam<T> = T | ((value: T) => T)
+type ValueParam<T> = T | ((c: T) => T)
 
-function useState<T>(value?: T): [Ref<T>, (value: ActionParam<T>) => void];
+function useState<T> (
+  value?: T | (() => T) | undefined
+): [Ref<T>, (value: ValueParam<T>) => void]
 
-/**
- * @name useState
- * @param {T} initialValue
- * @returns
- */
-function useState<T>(initialValue?: T) {
-  const state = ref(initialValue) as Ref<T>;
-  const setState = (newVal: ActionParam<T>) => {
-    if (typeof newVal === 'function') {
-      state.value = (newVal as ((value: T) => T))(state.value)
-    } else {
-      state.value = newVal;
-    } 
-  };
-  return [state, setState];
+function useState<T = any> (initialValue?: T | (() => T)) {
+  const state = ref(
+    initialValue instanceof Function ? initialValue() : initialValue
+  ) as Ref<T>
+  const setState = (value: ValueParam<T>) => {
+    state.value = value instanceof Function ? value(state.value) : value
+  }
+  return [state, setState]
 }
 
-export default useState;
+export default useState
