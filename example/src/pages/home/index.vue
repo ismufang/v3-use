@@ -6,12 +6,13 @@
             <UseToggle />
             <UseBoolean />
             <UseCounter />
+            <UseTitle />
         </div>
     </div>
 </template>
 
 <script setup lang="ts">
-import { UseState, UseToggle, UseBoolean, UseCounter } from '../../components'
+import { UseState, UseToggle, UseBoolean, UseCounter, UseTitle } from '../../components'
 </script>
 
 <style scoped lang="scss">

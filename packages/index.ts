@@ -2,6 +2,7 @@ import useState from './useState'
 import useToggle from './useToggle'
 import useBoolean from './useBoolean'
 import useCounter from './useCounter'
+import useTitle from './useTitle'
 
 
 export {
@@ -9,5 +10,10 @@ export {
     useState,
     useToggle,
     useBoolean,
+
+    // Scene
     useCounter,
+
+    // Dom
+    useTitle
 }
