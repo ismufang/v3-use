@@ -5,6 +5,7 @@ import useCounter from './useCounter'
 import useTitle from './useTitle'
 import useTimeout from './useTimeout'
 import useInterval from './useInterval'
+import useMethods from './useMethods'
 
 
 export {
@@ -12,6 +13,7 @@ export {
     useState,
     useToggle,
     useBoolean,
+    useMethods,
 
     // Scene
     useCounter,
