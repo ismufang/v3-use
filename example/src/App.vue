@@ -1,12 +1,6 @@
 <template>
-  <div>
-    <Home />
-  </div>
+  <router-view />
 </template>
-
-<script setup lang="ts">
-import { Home } from './pages'
-</script>
 
 <style>
 #app {

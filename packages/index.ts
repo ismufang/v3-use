@@ -3,6 +3,8 @@ import useToggle from './useToggle'
 import useBoolean from './useBoolean'
 import useCounter from './useCounter'
 import useTitle from './useTitle'
+import useTimeout from './useTimeout'
+import useInterval from './useInterval'
 
 
 export {
@@ -15,5 +17,9 @@ export {
     useCounter,
 
     // Dom
-    useTitle
+    useTitle,
+
+    // Effect
+    useTimeout,
+    useInterval,
 }

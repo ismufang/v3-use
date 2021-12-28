@@ -7,12 +7,23 @@
             <UseBoolean />
             <UseCounter />
             <UseTitle />
+            <UseTimeout />
+            <UseInterval />
         </div>
+        <router-link to="/about">about</router-link>
     </div>
 </template>
 
 <script setup lang="ts">
-import { UseState, UseToggle, UseBoolean, UseCounter, UseTitle } from '../../components'
+import { 
+    UseState, 
+    UseToggle, 
+    UseBoolean, 
+    UseCounter, 
+    UseTitle, 
+    UseTimeout,
+    UseInterval,
+} from '../../components'
 </script>
 
 <style scoped lang="scss">

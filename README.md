@@ -23,8 +23,8 @@ yarn add v3-use
 </template>
 
 <script setup>
-  import { useBoolean } from "v3-use";
-  const [state, { toggle, setFalse, setTrue }] = useBoolean();
+  import { useBoolean } from 'v3-use'
+  const [state, { toggle, setFalse, setTrue }] = useBoolean()
 </script>
 ```
 
@@ -37,4 +37,9 @@ yarn add v3-use
 - **Scene**
   - `useCounter` — 管理计数器的 Hook
 - **Dom**
+
   - `useTitle` — 用于设置页面标题
+
+- **Effect**
+  - `useTimeout` — 一个可以处理 setTimeout 计时器函数的 Hook
+  - `useInterval` — 一个可以处理 setInterval 的 Hook
