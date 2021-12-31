@@ -6,10 +6,6 @@ Using vue3.x composition api in react-hooks style.
 
 ```sh
 npm install v3-use
-
-# or
-
-yarn add v3-use
 ```
 
 ## Usage
@@ -36,14 +32,13 @@ yarn add v3-use
   - `useReducer` — 适用于复杂状态管理的 Hook
   - `useToggle` — 用于在两个状态值间切换的 Hook
   - `useBoolean` — 管理 boolean 值的 Hook
-
+  
 - **Scene**
 
   - `useCounter` — 管理计数器的 Hook
   - `useMethods` — 一个 useReducer 简化版的 Hook
 
 - **Dom**
-
   - `useTitle` — 用于设置页面标题
 
 - **Effect**
