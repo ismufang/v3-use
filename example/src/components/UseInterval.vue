@@ -18,9 +18,9 @@ const tap = () => {
     }, 3000)
 }
 
-onMounted(() => {
-    useInterval(() => {
-        console.log('立即执行一次')
-    }, 2000, { immediate: true })
-})
+// onMounted(() => {
+//     useInterval(() => {
+//         console.log('立即执行一次')
+//     }, 2000, { immediate: true })
+// })
 </script>

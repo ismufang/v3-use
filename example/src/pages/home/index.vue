@@ -9,6 +9,8 @@
             <UseTitle />
             <UseTimeout />
             <UseInterval />
+            <UseReducer />
+            <UseMethods />
         </div>
         <router-link to="/about">about</router-link>
     </div>
@@ -23,6 +25,8 @@ import {
     UseTitle, 
     UseTimeout,
     UseInterval,
+    UseReducer,
+    UseMethods,
 } from '../../components'
 </script>
 

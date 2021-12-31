@@ -6,6 +6,7 @@ import useTitle from './useTitle'
 import useTimeout from './useTimeout'
 import useInterval from './useInterval'
 import useMethods from './useMethods'
+import useReducer from './useReducer'
 
 
 export {
@@ -13,10 +14,11 @@ export {
     useState,
     useToggle,
     useBoolean,
-    useMethods,
+    useReducer,
 
     // Scene
     useCounter,
+    useMethods,
 
     // Dom
     useTitle,
