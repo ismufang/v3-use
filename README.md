@@ -37,6 +37,7 @@ npm install v3-use
 
   - `useCounter` — 管理计数器的 Hook
   - `useMethods` — 一个 useReducer 简化版的 Hook
+  - `useCountDown` — 一个用于管理倒计时的 Hook
 
 - **Dom**
   - `useTitle` — 用于设置页面标题
