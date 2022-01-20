@@ -7,6 +7,7 @@ import useTimeout from './useTimeout'
 import useInterval from './useInterval'
 import useMethods from './useMethods'
 import useReducer from './useReducer'
+import useCountDown from './useCountDown'
 
 
 export {
@@ -19,6 +20,7 @@ export {
     // Scene
     useCounter,
     useMethods,
+    useCountDown,
 
     // Dom
     useTitle,

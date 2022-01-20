@@ -11,6 +11,7 @@
             <UseInterval />
             <UseReducer />
             <UseMethods />
+            <UseCountDown />
         </div>
         <router-link to="/about">about</router-link>
     </div>
@@ -27,6 +28,7 @@ import {
     UseInterval,
     UseReducer,
     UseMethods,
+    UseCountDown,
 } from '../../components'
 </script>
 
