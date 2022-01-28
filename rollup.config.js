@@ -7,13 +7,12 @@ import { terser } from 'rollup-plugin-terser'
 const isProd = process.env.NODE_ENV
 const input = 'packages/index.ts'
 const outputDir = isProd ? 'dist/' : 'example/dist/'
-const fn = 'index'
+const outputFileName = 'index'
 
 const basePlugins = [
-  resolve(), // 查找和打包node_modules中的第三方模块
-  commonjs(), // 将 CommonJS 转换成 ES2015 模块供 Rollup 处理
+  resolve(),
+  commonjs(),
   typescript({
-    // 解析TypeScript
     tsconfigOverride: {
       compilerOptions: {
         declaration: false
@@ -24,18 +23,15 @@ const basePlugins = [
 
 const devPlugins = []
 const prodPlugins = [
-  terser() // 压缩文件
+  terser()
 ]
 
 const plugins = [...basePlugins].concat(isProd ? prodPlugins : devPlugins)
 
-const configs = [
-  {
-    input, // 打包入口
+const configs = [{
+    input,
     output: {
-      // 打包出口
-      file: `${outputDir}${fn}.js`,
-      // file: 'dist/index.js',
+      file: `${outputDir}${outputFileName}.js`,
       format: 'esm',
       globals: {
         vue: 'Vue'
@@ -47,7 +43,7 @@ const configs = [
   {
     input,
     output: {
-      file: `${outputDir}${fn}.d.ts`,
+      file: `${outputDir}${outputFileName}.d.ts`,
       format: 'esm'
     },
     plugins: [dts()],
