@@ -8,6 +8,7 @@ import useInterval from './useInterval'
 import useMethods from './useMethods'
 import useReducer from './useReducer'
 import useCountDown from './useCountDown'
+import useEffect from './useEffect'
 
 
 export {
@@ -28,4 +29,5 @@ export {
     // Effect
     useTimeout,
     useInterval,
+    useEffect,
 }

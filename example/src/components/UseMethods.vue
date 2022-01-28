@@ -11,7 +11,6 @@
 </template>
 
 <script setup lang="ts">
-import { HookLayout } from '../layouts'
 import { useMethods } from '../../dist/index'
 
 type State = {

@@ -12,6 +12,7 @@
             <UseReducer />
             <UseMethods />
             <UseCountDown />
+            <UseEffect />
         </div>
         <router-link to="/about">about</router-link>
     </div>
@@ -29,6 +30,7 @@ import {
     UseReducer,
     UseMethods,
     UseCountDown,
+    UseEffect,
 } from '../../components'
 </script>
 

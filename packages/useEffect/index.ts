@@ -1,25 +1,39 @@
-import { onMounted, watchEffect } from "vue";
+import { onMounted, watchEffect, watch, onBeforeUnmount } from 'vue'
 
-declare const UNDEFINED_VOID_ONLY: unique symbol;
+declare const UNDEFINED_VOID_ONLY: unique symbol
 
 // Destructors are only allowed to return void.
-type Destructor = () => void | { [UNDEFINED_VOID_ONLY]: never };
+type Destructor = () => void | { [UNDEFINED_VOID_ONLY]: never }
 
 // NOTE: callbacks are _only_ allowed to return either void, or a destructor.
-type EffectCallback = () => (void | Destructor);
+type EffectCallback = () => void | Destructor
 
-type DependencyList = ReadonlyArray<any>;
-
-function useEffect (effect: EffectCallback, deps?: DependencyList): void
+type DependencyList = ReadonlyArray<any>
 
 function useEffect (effect: EffectCallback, deps?: DependencyList): void {
-    if (!deps) {
-        watchEffect(effect)
-    } else if (deps.length === 0) {
-        onMounted(() => {
-            effect()
-        })
-    } else {
-        
+  let destructor: Destructor | null
+  const hook = () => {
+    destructor?.()
+    const fn = effect()
+    if (fn && typeof fn === 'function' && !destructor) {
+      destructor = fn
     }
+  }
+  if (!deps) {
+    // https://github.com/vuejs/core/issues/4686
+    // beforeUpdate/updated not triggered on component when slot content in child component changes #4686
+    // onUpdated(effect)
+    watchEffect(hook)
+  } else if (deps.length === 0) {
+    onMounted(hook)
+    onBeforeUnmount(() => {
+      destructor?.()
+    })
+  } else {
+    watch(deps, hook, {
+      immediate: true
+    })
+  }
 }
+
+export default useEffect
