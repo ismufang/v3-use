@@ -1,6 +1,6 @@
 {
   "name": "v3-use",
-  "version": "1.0.11",
+  "version": "1.0.12",
   "description": "Using vue3.x composition api in react-hooks style.",
   "main": "dist/index.js",
   "license": "MIT",
