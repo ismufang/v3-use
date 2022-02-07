@@ -1,13 +1,8 @@
 <template>
-  <hook-layout>
-    <template v-slot:title>useEffect</template>
-    <template v-slot:default>
-      <div>{{ count }} - {{ state }}</div>
-      <button @click="inc()">inc()</button>
-      <button @click="dec()">dec()</button>
-      <button @click="incState">incState</button>
-    </template>
-  </hook-layout>
+  <div>{{ count }} - {{ state }}</div>
+  <button @click="inc()">inc()</button>
+  <button @click="dec()">dec()</button>
+  <button @click="incState">incState</button>
 </template>
 
 <script setup lang="ts">
@@ -17,7 +12,7 @@ const [count, { dec, inc }] = useCounter(0)
 const state = ref(0)
 
 const incState = () => {
-    state.value = state.value + 1
+  state.value = state.value + 1
 }
 
 // https://github.com/vuejs/core/issues/4686
@@ -34,13 +29,13 @@ const incState = () => {
 // })
 
 useEffect(() => {
-    console.log('watch state', state.value)
-    return () => {
-        console.log('执行销毁函数')
-    }
+  console.log('watch state', state.value)
+  return () => {
+    console.log('执行销毁函数')
+  }
 }, [state])
 
 useEffect(() => {
-    console.log('watch count', state.value)
+  console.log('watch count', state.value)
 }, [count])
 </script>

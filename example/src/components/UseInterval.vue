@@ -1,10 +1,5 @@
 <template>
-  <hook-layout>
-    <template v-slot:title>useInterval</template>
-    <template v-slot:default>
-      <button @click="tap()">3s后执行</button>
-    </template>
-  </hook-layout>
+  <button @click="tap()">3s后执行</button>
 </template>
 
 <script setup lang="ts">

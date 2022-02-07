@@ -1,6 +1,6 @@
 # v3-use
 
-Using vue3.x composition api in react-hooks style.
+V3-use is a high-quality and reliable Vue3 Hooks library. Using vue3.x composition api in react-hooks style.
 
 ## Install
 
@@ -13,9 +13,9 @@ npm install v3-use
 ```html
 <template>
   <div>{{state}}</div>
-  <button @click="toggle">toggle()</button>
-  <button @click="setFalse">setFalse()</button>
-  <button @click="setTrue">setTrue()</button>
+  <button @click="toggle()">toggle()</button>
+  <button @click="setFalse()">setFalse()</button>
+  <button @click="setTrue()">setTrue()</button>
 </template>
 
 <script setup>
@@ -28,7 +28,7 @@ npm install v3-use
 
 - **State**
 
-  - `useState` — 管理 state 的 Hook
+  - [`useState`](./docs/useState.md) — 管理 state 的 Hook
   - `useReducer` — 适用于复杂状态管理的 Hook
   - `useToggle` — 用于在两个状态值间切换的 Hook
   - `useBoolean` — 管理 boolean 值的 Hook

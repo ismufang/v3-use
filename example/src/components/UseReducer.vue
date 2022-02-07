@@ -1,15 +1,10 @@
 <template>
-  <hook-layout>
-    <template v-slot:title>useReducer</template>
-    <template v-slot:default>
-      <div>{{ state.count }}</div>
-      <button @click="dispatch({ type: 'increment' })">inc</button>
-      <button @click="dispatch({ type: 'decrement' })">dec</button>
-      <button @click="dispatch({ type: 'reset', payload: { count: 100 } })">
-        reset
-      </button>
-    </template>
-  </hook-layout>
+  <div>{{ state.count }}</div>
+  <button @click="dispatch({ type: 'increment' })">inc</button>
+  <button @click="dispatch({ type: 'decrement' })">dec</button>
+  <button @click="dispatch({ type: 'reset', payload: { count: 100 } })">
+    reset
+  </button>
 </template>
 
 <script setup lang="ts">
@@ -25,14 +20,14 @@ type Action = {
 }
 
 const initialCount = {
-  count: 0
+  count: 0,
 }
 
-function init (state: any) {
+function init(state: any) {
   return { count: state.count }
 }
 
-function reducer (state: State, action: Action) {
+function reducer(state: State, action: Action) {
   switch (action.type) {
     case 'increment':
       return { count: state.count + 1 }

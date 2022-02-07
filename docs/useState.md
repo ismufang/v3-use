@@ -1,3 +1,10 @@
+# useState
+
+管理 state 的 Hook
+
+## Usage
+
+```vue
 <template>
   <div>{{ state }}</div>
   <button @click="setState(1)">setState(1)</button>
@@ -7,7 +14,18 @@
 </template>
 
 <script setup lang="ts">
-import { useState } from '../../dist/index'
+import { useState } from 'v3-use'
 
 const [state, setState] = useState<number>(1)
 </script>
+```
+
+## Reference
+
+```typescript
+function useState<T>(
+  value?: T | (() => T) | undefined
+): [Ref<T>, (value: ValueParam<T>) => void]
+
+type ValueParam<T> = T | ((c: T) => T)
+```

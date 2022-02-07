@@ -7,9 +7,7 @@ type Action<T = string, P = any> = {
   payload?: P
 }
 
-type CreateMethods<M, T> = (
-  state: T
-) => {
+type CreateMethods<M, T> = (state: T) => {
   [P in keyof M]: (payload?: any) => T
 }
 
@@ -17,7 +15,7 @@ type WrappedMethods<M> = {
   [P in keyof M]: (...payload: any) => void
 }
 
-function useMethods<M, T> (
+function useMethods<M, T>(
   createMethods: CreateMethods<M, T>,
   initialState: T
 ): [Ref<T>, WrappedMethods<M>] {
@@ -29,9 +27,9 @@ function useMethods<M, T> (
 
   const actionTypes = Object.keys(createMethods(initialState)) as Array<keyof M>
   const wrappedMethods: WrappedMethods<M> = actionTypes.reduce((acc, type) => {
-      acc[type] = (...payload) => dispatch({ type, payload })
-      return acc
-    }, {} as WrappedMethods<M>)
+    acc[type] = (...payload) => dispatch({ type, payload })
+    return acc
+  }, {} as WrappedMethods<M>)
 
   return [state, wrappedMethods]
 }

@@ -1,4 +1,4 @@
-import { Ref, ref } from 'vue'
+import { Ref } from 'vue'
 import { useToggle } from '..'
 
 interface Actions {
@@ -7,9 +7,9 @@ interface Actions {
   setFalse: () => void
 }
 
-function useBoolean (defaultValue?: boolean): [Ref<boolean>, Actions]
+function useBoolean(defaultValue?: boolean): [Ref<boolean>, Actions]
 
-function useBoolean (defaultValue: boolean = false) {
+function useBoolean(defaultValue: boolean = false) {
   const [state, { toggle, set }] = useToggle(defaultValue)
 
   const setTrue = () => set(true)

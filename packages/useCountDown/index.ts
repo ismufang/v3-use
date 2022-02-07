@@ -18,15 +18,20 @@ export type Actions = {
   stop: () => void
 }
 
-function calcLeft (left: number, format?: (left: number) => number) {
+function calcLeft(left: number, format?: (left: number) => number) {
   return format && typeof format === 'function' ? format(left) : left
 }
 
-function useCountDown (options?: Options): [Ref<number>, Actions]
+function useCountDown(options?: Options): [Ref<number>, Actions]
 
-function useCountDown (options?: Options) {
-  const { defaultValue = 0, interval = 1000, step = 1000, onEnd, format } =
-    options ?? {}
+function useCountDown(options?: Options) {
+  const {
+    defaultValue = 0,
+    interval = 1000,
+    step = 1000,
+    onEnd,
+    format,
+  } = options ?? {}
   const [count, setCount] = useState(0)
   const [timeLeft, setTimeLeft] = useState(defaultValue)
 
@@ -59,7 +64,7 @@ function useCountDown (options?: Options) {
     setCount(t ? t : defaultValue ?? 0)
     if (isEnd()) return
     timer = setInterval(() => {
-      setCount(state => state - step)
+      setCount((state) => state - step)
       isEnd()
     }, interval)
   }
@@ -68,7 +73,7 @@ function useCountDown (options?: Options) {
     start(count.value)
   }
 
-  watch(count, val => {
+  watch(count, (val) => {
     setTimeLeft(calcLeft(val, format))
   })
 

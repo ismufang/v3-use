@@ -1,6 +1,8 @@
 # compiled output
 /node_modules
 /dist
+docs/node_modules
+docs/dist
 example/node_modules
 example/dist
 

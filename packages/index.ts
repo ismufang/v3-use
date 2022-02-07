@@ -10,24 +10,20 @@ import useReducer from './useReducer'
 import useCountDown from './useCountDown'
 import useEffect from './useEffect'
 
-
 export {
-    // State
-    useState,
-    useToggle,
-    useBoolean,
-    useReducer,
-
-    // Scene
-    useCounter,
-    useMethods,
-    useCountDown,
-
-    // Dom
-    useTitle,
-
-    // Effect
-    useTimeout,
-    useInterval,
-    useEffect,
+  // State
+  useState,
+  useToggle,
+  useBoolean,
+  useReducer,
+  // Scene
+  useCounter,
+  useMethods,
+  useCountDown,
+  // Dom
+  useTitle,
+  // Effect
+  useTimeout,
+  useInterval,
+  useEffect,
 }

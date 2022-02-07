@@ -15,40 +15,39 @@ const basePlugins = [
   typescript({
     tsconfigOverride: {
       compilerOptions: {
-        declaration: false
-      }
-    }
-  })
+        declaration: false,
+      },
+    },
+  }),
 ]
 
 const devPlugins = []
-const prodPlugins = [
-  terser()
-]
+const prodPlugins = [terser()]
 
 const plugins = [...basePlugins].concat(isProd ? prodPlugins : devPlugins)
 
-const configs = [{
+const configs = [
+  {
     input,
     output: {
       file: `${outputDir}${outputFileName}.js`,
       format: 'esm',
       globals: {
-        vue: 'Vue'
-      }
+        vue: 'Vue',
+      },
     },
     plugins: plugins,
-    external: ['vue', 'vue-router']
+    external: ['vue', 'vue-router'],
   },
   {
     input,
     output: {
       file: `${outputDir}${outputFileName}.d.ts`,
-      format: 'esm'
+      format: 'esm',
     },
     plugins: [dts()],
-    external: ['vue']
-  }
+    external: ['vue'],
+  },
 ]
 
 export default configs

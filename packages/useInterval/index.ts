@@ -1,12 +1,12 @@
 import { onBeforeUnmount } from 'vue'
 
-function useInterval (
+function useInterval(
   fn: () => void,
   delay: number,
   options?: { immediate?: boolean }
 ): void
 
-function useInterval (
+function useInterval(
   fn: () => void,
   delay: number,
   options?: { immediate?: boolean }

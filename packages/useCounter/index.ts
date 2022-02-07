@@ -27,33 +27,36 @@ function getTargetValue(val: number, options: Options = {}) {
   return target
 }
 
-function useCounter (initialValue?: number, options?: Options): [Ref<number>, Actions]
+function useCounter(
+  initialValue?: number,
+  options?: Options
+): [Ref<number>, Actions]
 
 function useCounter(initialValue: number = 0, options: Options = {}) {
   const { min, max } = options
   const [current, setCurrent] = useState<number>(() => {
     return getTargetValue(initialValue, {
       min,
-      max
+      max,
     })
   })
 
   const setValue = (value: ValueParam) => {
-    setCurrent(c => {
+    setCurrent((c) => {
       const target = value instanceof Function ? value(c) : value
       return getTargetValue(target, {
         max,
-        min
+        min,
       })
     })
   }
 
   const inc = (delta: number = 1) => {
-    setValue(c => c + delta)
+    setValue((c) => c + delta)
   }
 
   const dec = (delta: number = 1) => {
-    setValue(c => c - delta)
+    setValue((c) => c - delta)
   }
 
   const set = (value: ValueParam) => {

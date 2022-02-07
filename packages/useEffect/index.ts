@@ -10,7 +10,7 @@ type EffectCallback = () => void | Destructor
 
 type DependencyList = ReadonlyArray<any>
 
-function useEffect (effect: EffectCallback, deps?: DependencyList): void {
+function useEffect(effect: EffectCallback, deps?: DependencyList): void {
   let destructor: Destructor | null
   const hook = () => {
     destructor?.()
@@ -31,7 +31,7 @@ function useEffect (effect: EffectCallback, deps?: DependencyList): void {
     })
   } else {
     watch(deps, hook, {
-      immediate: true
+      immediate: true,
     })
   }
 }

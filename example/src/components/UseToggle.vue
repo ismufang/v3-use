@@ -1,15 +1,10 @@
 <template>
-  <hook-layout>
-    <template v-slot:title>useToggle</template>
-    <template v-slot:default>
-      <div>{{ state }}</div>
-      <button @click="toggle()">toggle()</button>
-      <button @click="set('Left')">set('Left')</button>
-      <button @click="set('Right')">set('Right')</button>
-      <button @click="setLeft()">setLeft()</button>
-      <button @click="setRight()">setRight()</button>
-    </template>
-  </hook-layout>
+  <div>{{ state }}</div>
+  <button @click="toggle()">toggle()</button>
+  <button @click="set('Left')">set('Left')</button>
+  <button @click="set('Right')">set('Right')</button>
+  <button @click="setLeft()">setLeft()</button>
+  <button @click="setRight()">setRight()</button>
 </template>
 
 <script setup lang="ts">
