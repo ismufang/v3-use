@@ -6,7 +6,7 @@ import { terser } from 'rollup-plugin-terser'
 
 const isProd = process.env.NODE_ENV
 const input = 'src/index.ts'
-const outputDir = isProd ? 'dist/' : 'example/dist/'
+const outputDir = isProd ? 'dist/' : 'example/lib/'
 const outputFileName = 'index'
 
 const basePlugins = [
