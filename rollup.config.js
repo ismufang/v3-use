@@ -5,7 +5,7 @@ import dts from 'rollup-plugin-dts'
 import { terser } from 'rollup-plugin-terser'
 
 const isProd = process.env.NODE_ENV
-const input = 'packages/index.ts'
+const input = 'src/index.ts'
 const outputDir = isProd ? 'dist/' : 'example/dist/'
 const outputFileName = 'index'
 
@@ -24,7 +24,7 @@ const basePlugins = [
 const devPlugins = []
 const prodPlugins = [terser()]
 
-const plugins = [...basePlugins].concat(isProd ? prodPlugins : devPlugins)
+const plugins = basePlugins.concat(isProd ? prodPlugins : devPlugins)
 
 const configs = [
   {
@@ -36,7 +36,7 @@ const configs = [
         vue: 'Vue',
       },
     },
-    plugins: plugins,
+    plugins,
     external: ['vue', 'vue-router'],
   },
   {
