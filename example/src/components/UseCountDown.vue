@@ -1,15 +1,5 @@
-<template>
-  <div>{{ countdown }}</div>
-  <button @click="start(30)">start(30 * 1000)</button>
-  <button @click="start(10)">start(10 * 1000)</button>
-  <button @click="start()">start()</button>
-  <button @click="pause">pause</button>
-  <button @click="play">play</button>
-  <button @click="stop">stop</button>
-</template>
-
 <script setup lang="ts">
-import { useCountDown } from '../../dist/index'
+import { useCountDown } from '../../lib/index'
 
 const [countdown, { start, pause, play, stop }] = useCountDown({
   onEnd: () => {
@@ -22,3 +12,14 @@ const [countdown, { start, pause, play, stop }] = useCountDown({
   step: 1,
 })
 </script>
+
+<template>
+  <h1>UseCountDown</h1>
+  <div>{{ countdown }}</div>
+  <button @click="start(30)">start(30 * 1000)</button>
+  <button @click="start(10)">start(10 * 1000)</button>
+  <button @click="start()">start()</button>
+  <button @click="pause">pause</button>
+  <button @click="play">play</button>
+  <button @click="stop">stop</button>
+</template>

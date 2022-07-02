@@ -1,12 +1,5 @@
-<template>
-  <div>{{ count }} - {{ state }}</div>
-  <button @click="inc()">inc()</button>
-  <button @click="dec()">dec()</button>
-  <button @click="incState">incState</button>
-</template>
-
 <script setup lang="ts">
-import { useCounter, useEffect } from '../../dist/index'
+import { useCounter, useEffect } from '../../lib/index'
 import { ref } from 'vue'
 const [count, { dec, inc }] = useCounter(0)
 const state = ref(0)
@@ -29,13 +22,26 @@ const incState = () => {
 // })
 
 useEffect(() => {
-  console.log('watch state', state.value)
-  return () => {
-    console.log('执行销毁函数')
-  }
-}, [state])
+  // console.log(count.value)
+  console.log(1119999)
+})
 
-useEffect(() => {
-  console.log('watch count', state.value)
-}, [count])
+// useEffect(() => {
+//   console.log('watch state', state.value)
+//   return () => {
+//     console.log('执行销毁函数')
+//   }
+// }, [state])
+
+// useEffect(() => {
+//   console.log('watch count', state.value)
+// }, [count])
 </script>
+
+<template>
+  <h1>UseEffect</h1>
+  <div>{{ count }} - {{ state }}</div>
+  <button @click="inc()">inc()</button>
+  <button @click="dec()">dec()</button>
+  <button @click="incState">incState</button>
+</template>

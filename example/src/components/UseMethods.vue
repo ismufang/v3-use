@@ -1,12 +1,5 @@
-<template>
-  <div>{{ state.count }}</div>
-  <button @click="dispatch.increment">inc</button>
-  <button @click="dispatch.decrement">dec</button>
-  <button @click="dispatch.reset">reset</button>
-</template>
-
 <script setup lang="ts">
-import { useMethods } from '../../dist/index'
+import { useMethods } from '../../lib/index'
 
 type State = {
   count: number
@@ -32,3 +25,11 @@ function reducer(state: State) {
 
 const [state, dispatch] = useMethods(reducer, initialCount)
 </script>
+
+<template>
+  <h1>UseMethods</h1>
+  <div>{{ state.count }}</div>
+  <button @click="dispatch.increment">inc</button>
+  <button @click="dispatch.decrement">dec</button>
+  <button @click="dispatch.reset">reset</button>
+</template>

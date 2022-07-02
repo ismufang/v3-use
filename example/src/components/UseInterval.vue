@@ -1,9 +1,5 @@
-<template>
-  <button @click="tap()">3s后执行</button>
-</template>
-
 <script setup lang="ts">
-import { useInterval } from '../../dist/index'
+import { useInterval } from '../../lib'
 // import { onMounted } from 'vue'
 
 const tap = () => {
@@ -18,3 +14,8 @@ const tap = () => {
 //     }, 2000, { immediate: true })
 // })
 </script>
+
+<template>
+  <h1>UseInterval</h1>
+  <button @click="tap">3s后执行</button>
+</template>
