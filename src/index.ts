@@ -9,6 +9,10 @@ import useMethods from './useMethods'
 import useReducer from './useReducer'
 import useCountDown from './useCountDown'
 import useEffect from './useEffect'
+import useLogger from './useLogger'
+import useEffectOnce from './useEffectOnce'
+import useUpdateEffect from './useUpdateEffect'
+import useFirstMountState from './useFirstMountState'
 
 export {
   // State
@@ -16,6 +20,7 @@ export {
   useToggle,
   useBoolean,
   useReducer,
+  useFirstMountState,
   // Scene
   useCounter,
   useMethods,
@@ -25,5 +30,9 @@ export {
   // Effect
   useTimeout,
   useInterval,
+  // LifeCycle
   useEffect,
+  useEffectOnce,
+  useUpdateEffect,
+  useLogger,
 }
