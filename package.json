@@ -1,11 +1,15 @@
 {
   "name": "v3-use",
-  "version": "1.0.12",
-  "description": "v3-use is a high-quality and reliable Vue3 Hooks library",
+  "version": "1.0.17",
+  "description": "High quality and reliable Vue3 Hooks library",
   "main": "dist/index.js",
   "license": "MIT",
-  "author": "@ismufang",
+  "author": "ismufang",
   "homepage": "https://github.com/ismufang/v3-use",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
   "keywords": [
     "hook",
     "vue3hooks",
@@ -20,7 +24,8 @@
     "prettier": "prettier -c --write .",
     "docs:dev": "vitepress dev docs --port=8877",
     "docs:build": "vitepress build docs",
-    "docs:serve": "vitepress serve docs --port=1334"
+    "docs:serve": "vitepress serve docs --port=1334",
+    "pub": "npm run build && npm publish"
   },
   "gitHooks": {
     "pre-commit": "lint-staged"
