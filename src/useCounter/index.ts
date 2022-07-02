@@ -51,11 +51,11 @@ function useCounter(initialValue: number = 0, options: Options = {}) {
     })
   }
 
-  const inc = (delta: number = 1) => {
+  const inc = (delta = 1) => {
     setValue((c) => c + delta)
   }
 
-  const dec = (delta: number = 1) => {
+  const dec = (delta = 1) => {
     setValue((c) => c - delta)
   }
 
