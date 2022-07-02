@@ -1,4 +1,4 @@
-import { onMounted, watchEffect, watch, onBeforeUnmount } from 'vue'
+import { onMounted, watchEffect, watch, onBeforeUnmount, onUpdated } from 'vue'
 
 declare const UNDEFINED_VOID_ONLY: unique symbol
 
@@ -22,8 +22,7 @@ function useEffect(effect: EffectCallback, deps?: DependencyList): void {
   if (!deps) {
     // https://github.com/vuejs/core/issues/4686
     // beforeUpdate/updated not triggered on component when slot content in child component changes #4686
-    // onUpdated(effect)
-    watchEffect(hook)
+    onUpdated(effect)
   } else if (deps.length === 0) {
     onMounted(hook)
     onBeforeUnmount(() => {
