@@ -10,18 +10,9 @@ npm install v3-use
 
 ## Usage
 
-```html
-<template>
-  <div>{{ state }}</div>
-  <button @click="toggle">toggle</button>
-  <button @click="setFalse">setFalse</button>
-  <button @click="setTrue">setTrue</button>
-</template>
-
-<script setup>
-  import { useBoolean } from 'v3-use'
-  const [state, { toggle, setFalse, setTrue }] = useBoolean()
-</script>
+```js
+import { useBoolean } from 'v3-use'
+const [state, { toggle, setFalse, setTrue }] = useBoolean()
 ```
 
 ## Hooks
