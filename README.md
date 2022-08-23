@@ -42,6 +42,6 @@ const [state, { toggle, setFalse, setTrue }] = useBoolean()
 
 - **LifeCycle**
   - [`useEffect`](https://v3use.ismufang.com/useEffect.html) &mdash; 像 React 一样使用 useEffect 的 Hook
-  - [`useEffectOnce`](./docs/updateDocs.md) &mdash; 只运行一次的声明周期（mounted, beforeUnmount）
+  - [`useEffectOnce`](./docs/updateDocs.md) &mdash; 只在`mounted`、`beforeUnmount`阶段执行的生命周期
   - [`useUpdateEffect`](./docs/updateDocs.md) &mdash; onUpdated 钩子函数封装，支持传入依赖监听
   - [`useLogger`](./docs/updateDocs.md) &mdash; 在控制台记录经历的生命周期（mounted，updated，breforeUnmount）

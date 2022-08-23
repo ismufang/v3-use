@@ -34,9 +34,9 @@
     "docs:serve": "vitepress serve docs --port=1334",
     "test": "vitest run",
     "test:watch": "vitest watch",
-    "release:major": "standard-version -r major",
-    "release:minor": "standard-version -r minor",
-    "release:patch": "standard-version -r patch"
+    "release:major": "standard-version -r major && git push --follow-tags origin main && npm publish",
+    "release:minor": "standard-version -r minor && git push --follow-tags origin main && npm publish",
+    "release:patch": "standard-version -r patch && git push --follow-tags origin main && npm publish"
   },
   "gitHooks": {
     "pre-commit": "yarn test && lint-staged"
