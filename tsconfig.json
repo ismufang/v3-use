@@ -1,24 +1,29 @@
 {
   "compilerOptions": {
-    "target": "es5",
+    "target": "ES6",
     "module": "ESNext",
     "declaration": true,
-    "declarationDir": "./types",
     "downlevelIteration": true,
     "strict": true,
     "noImplicitThis": true,
     "moduleResolution": "node",
     "esModuleInterop": true,
     "skipLibCheck": true,
-    "forceConsistentCasingInFileNames": true
+    "forceConsistentCasingInFileNames": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noImplicitReturns": true,
+    "noImplicitAny": false,
+    "noFallthroughCasesInSwitch": true,
+    "allowJs": true,
+    "jsx": "preserve",
+    "lib": ["ESNext", "DOM"],
+    "rootDir": "src",
+    "outDir": "lib",
+    "paths": {
+      "v3-use": ["./src/hooks/index.ts"]
+    },
+    "types": ["vitest/globals"]
   },
-  "include": ["src"],
-  "exclude": [
-    "node_modules",
-    "**/**/*.test.ts",
-    "**/**/*.stories.tsx",
-    "**/**/*.md",
-    "**/dist",
-    "src/.test"
-  ]
+  "exclude": ["node_modules", "lib", "esm", "scripts", "coverage"]
 }

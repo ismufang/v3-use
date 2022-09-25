@@ -1,10 +1,44 @@
 {
   "name": "v3-use",
   "version": "1.0.24",
-  "description": "High quality and reliable Vue3 Hooks library",
-  "main": "dist/index.js",
+  "description": "Vue3 Hooks library",
+  "main": "lib/index.js",
+  "module": "esm/index.js",
+  "types": "lib/index.d.ts",
+  "typings": "lib/index.d.ts",
+  "files": [
+    "lib",
+    "esm"
+  ],
+  "scripts": {
+    "preinstall": "npx only-allow pnpm",
+    "prepare": "husky install",
+    "dev": "pnpm docs:dev",
+    "build:cjs": "tsc -p ./src/tsconfig.prod.json",
+    "build:es": "tsc -p ./src/tsconfig.prod.json -m esNext --outDir esm",
+    "build": "pnpm build:cjs && pnpm build:es",
+    "docs:dev": "vitepress dev src",
+    "docs:build": "vitepress build src",
+    "docs:serve": "vitepress serve src",
+    "test": "vitest run -c ./src/vite.config.ts",
+    "test:watch": "vitest watch -c ./src/vite.config.ts",
+    "test:coverage": "vitest run --coverage -c ./src/vite.config.ts",
+    "lint": "eslint \"src/**/*.{ts,tsx}\"",
+    "lint:fix": "pnpm lint --fix",
+    "lint:types": "tsc --noEmit",
+    "format": "prettier -c --write .",
+    "metadata": "esno ./scripts/generateMetadata.ts",
+    "release": "release-it"
+  },
   "license": "MIT",
   "author": "ismufang",
+  "keywords": [
+    "vue3-hooks",
+    "vue-hooks",
+    "vue-use",
+    "v3-use",
+    "vue3-use"
+  ],
   "homepage": "https://github.com/ismufang/v3-use#readme",
   "repository": {
     "type": "git",
@@ -13,57 +47,64 @@
   "bugs": {
     "url": "https://github.com/ismufang/v3-use/issues"
   },
-  "types": "dist/index.d.ts",
-  "files": [
-    "dist"
-  ],
-  "keywords": [
-    "hook",
-    "vue3-hooks",
-    "vue-hook",
-    "vue-use",
-    "v3-use",
-    "vue3-use"
-  ],
-  "scripts": {
-    "watch": "rollup -c --watch",
-    "build": "cross-env NODE_ENV=production rollup -c",
-    "prettier": "prettier -c --write .",
-    "docs:dev": "vitepress dev docs --port=8877",
-    "docs:build": "vitepress build docs",
-    "docs:serve": "vitepress serve docs --port=1334",
-    "test": "vitest run",
-    "test:watch": "vitest watch",
-    "release:major": "standard-version -r major && git push --follow-tags origin main && npm run build && npm publish",
-    "release:minor": "standard-version -r minor && git push --follow-tags origin main && npm run build && npm publish",
-    "release:patch": "standard-version -r patch && git push --follow-tags origin main && npm run build && npm publish"
-  },
-  "gitHooks": {
-    "pre-commit": "lint-staged"
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/"
   },
   "lint-staged": {
-    "**/*.{js,jsx,tsx,ts,less,md,json}": [
-      "prettier --write"
+    "src/**/**/*.{ts,tsx}": [
+      "eslint --fix"
     ]
   },
   "devDependencies": {
-    "cross-env": "^7.0.3",
+    "@commitlint/cli": "^17.1.2",
+    "@commitlint/config-conventional": "^17.1.0",
+    "@types/fs-extra": "^9.0.13",
+    "@types/node": "^18.7.21",
+    "@typescript-eslint/eslint-plugin": "^5.38.0",
+    "@typescript-eslint/parser": "^5.38.0",
+    "@vitest/coverage-c8": "^0.23.4",
+    "@vue/test-utils": "^2.1.0",
+    "eslint": "^8.24.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "esno": "^0.16.3",
+    "fast-glob": "^3.2.12",
+    "fs-extra": "^10.1.0",
+    "husky": "^8.0.1",
+    "jsdom": "^20.0.1",
     "lint-staged": "^11.2.4",
     "prettier": "^2.4.1",
-    "rollup": "^2.62.0",
-    "rollup-plugin-commonjs": "^10.1.0",
-    "rollup-plugin-dts": "^3.0.2",
-    "rollup-plugin-node-resolve": "^5.2.0",
-    "rollup-plugin-terser": "^7.0.2",
-    "rollup-plugin-typescript2": "^0.30.0",
-    "rollup-plugin-uglify": "^6.0.4",
-    "rollup-plugin-vue": "^6.0.0",
+    "release-it": "^15.4.3",
+    "sass": "^1.55.0",
     "standard-version": "^9.5.0",
-    "tslib": "^2.3.1",
+    "tslib": "^2.4.0",
     "typescript": "^4.5.4",
-    "vitepress": "^0.21.6",
+    "vite": "^3.1.4",
+    "vitepress": "1.0.0-alpha.4",
     "vitest": "^0.22.1",
-    "vue": "3.2.26",
-    "yorkie": "^2.0.0"
+    "vue": "3.2.39"
+  },
+  "peerDependencies": {
+    "vue": ">=3.2.0"
+  },
+  "git": {
+    "commitMessage": "chore(release): v${version}"
+  },
+  "github": {
+    "release": true
+  },
+  "hooks": {
+    "before:init": [
+      "pnpm lint:fix",
+      "pnpm test"
+    ],
+    "after:bump": "pnpm build",
+    "after:git:release": "echo After git push, before github release",
+    "after:release": "echo Successfully released ${name} v${version} to ${repo.repository}."
+  },
+  "commitlint": {
+    "extends": [
+      "@commitlint/config-conventional"
+    ]
   }
 }
