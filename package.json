@@ -84,17 +84,6 @@
   "peerDependencies": {
     "vue": ">=3.2.0"
   },
-  "git": {
-    "commitMessage": "chore(release): v${version}"
-  },
-  "github": {
-    "release": true
-  },
-  "hooks": {
-    "after:bump": "pnpm build",
-    "after:git:release": "echo After git push, before github release",
-    "after:release": "echo Successfully released ${name} v${version} to ${repo.repository}."
-  },
   "simple-git-hooks": {
     "pre-commit": "npx lint-staged && pnpm test"
   }
