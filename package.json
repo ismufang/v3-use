@@ -1,6 +1,6 @@
 {
   "name": "v3-use",
-  "version": "1.0.25-1",
+  "version": "1.0.25",
   "description": "Vue3 Hooks library",
   "main": "lib/index.js",
   "module": "esm/index.js",
