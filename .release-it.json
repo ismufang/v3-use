@@ -1,14 +1,23 @@
 {
   "git": {
-    "commitMessage": "chore(release): v${version}"
+    "commitMessage": "chore(release): v${version}",
+    "tagName": "v${version}"
   },
   "github": {
-    "release": true
+    "release": true,
+    "releaseName": "${version}",
+    "releaseNotes": "echo '${changelog}' | sed 1,2d"
+  },
+  "plugins": {
+    "@release-it/conventional-changelog": {
+      "preset": "conventionalcommits",
+      "infile": "CHANGELOG.md"
+    }
   },
   "hooks": {
-    "before:init": ["npx lint-staged", "pnpm test"],
+    "before:init": ["pnpm lint", "pnpm test"],
     "after:bump": "pnpm build",
     "after:git:release": "echo After git push, before github release",
-    "after:release": "echo Successfully released ${name} v${version} to ${repo.repository}."
+    "after:release": "🚀 Successfully released ${name} v${version} to ${repo.repository}."
   }
 }
