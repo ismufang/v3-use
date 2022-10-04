@@ -23,4 +23,4 @@ import { useBoolean } from 'v3-use'
 1. Create `hooks/useYourHook/index.ts` and create `hooks/useYourHook/demo/index.vue` and create `hooks/useYourHook/index.md`, run `pnpm metadata && pnpm dev` to preview demo and start coding you hook and create documentation for your hook
 2. Create `hooks/useYourHook/__tests__/index.test.ts`, run `pnpm test:watch` to start the test runner and start writing tests for your hook
 3. `pnpm test:coverage` tests coverage at 100%
-4. Export your hook from `src/hook/index.ts` and add your hook to `README.md`
+4. Export your hook from `src/hooks/index.ts` and add your hook to `README.md`

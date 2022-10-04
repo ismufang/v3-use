@@ -22,11 +22,11 @@ const initialCount = {
   count: 0
 }
 
-function init(state: State) {
+const init = (state: State) => {
   return { count: state.count }
 }
 
-function reducer(state: State, action: Action) {
+const reducer = (state: State, action: Action) => {
   switch (action.type) {
     case 'increment':
       return { count: state.count + 1 }
@@ -50,6 +50,8 @@ const [state, dispatch] = useReducer<R extends Reducer<any, any>, I>(reducer: R,
   initializer?: (arg: I) => ReducerState<R>)
 ```
 
+### Type Declarations
+
 ```ts
 export declare type Reducer<S, A> = (prevState: S, action: A) => S
 export declare type ReducerState<R extends Reducer<any, any>> =
@@ -66,7 +68,7 @@ export declare function useReducer<R extends Reducer<any, any>, I>(
 
 ### Params
 
-- **`reducer`**_`: R extends Reducer<any, any>`_ &mdash; reducer 纯函数，返回最新状态
+- **`reducer`**_`: Reducer`_ &mdash; reducer 纯函数，返回最新状态
 - **`initializerArg`**_`: I`_ &mdash;初始 state
 - **`initializer`**_`: (arg: I) => ReducerState<R>`_ &mdash; 惰性地创建初始 state。为此，需要将 init 函数作为 useReducer 的第三个参数传入，这样初始 state 将被设置为 `init(initialArg)`
 
