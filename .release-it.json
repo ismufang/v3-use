@@ -18,6 +18,6 @@
     "before:init": ["pnpm lint", "pnpm test"],
     "after:bump": "pnpm build",
     "after:git:release": "echo After git push, before github release",
-    "after:release": "🚀 Successfully released ${name} v${version} to ${repo.repository}."
+    "after:release": "echo Successfully released ${name} v${version} to ${repo.repository}."
   }
 }
