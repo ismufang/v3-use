@@ -15,7 +15,7 @@ const initialCount = {
   count: 0
 }
 
-function reducer (state: State) {
+const reducer = (state: State) => {
   return {
     increment () {
       return { count: state.count + 1 }
@@ -63,7 +63,7 @@ export declare function useMethods<M, T>(
 
 ### Params
 
-- **`createMethods`**_`: CreateMethods_ &mdash; 简化版 reducer 函数，返回包含方法的对象
+- **`createMethods`**_`: CreateMethods`_ &mdash; 简化版 reducer 函数，返回包含方法的对象
 - **`initialState`**_`: T`_ &mdash; 初始 state
 
 ### Result
