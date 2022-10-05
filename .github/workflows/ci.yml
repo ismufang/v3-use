@@ -1,8 +1,11 @@
 name: ci
 on:
-  pull_request:
+  push:
     branches:
       - '**'
+  pull_request:
+    branches:
+      - main
 
 jobs:
   lint-and-test:
@@ -24,5 +27,8 @@ jobs:
       - name: Run eslint
         run: pnpm run lint
 
-      - name: Run tests
-        run: pnpm run test
+      - name: Run tests and collect coverage
+        run: pnpm run test:coverage
+
+      - name: Upload coverage reports to Codecov
+        run: ./node_modules/.bin/codecov -t ${{ secrets.CODECOV_TOKEN }}
