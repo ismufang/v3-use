@@ -2,6 +2,8 @@
 
 v3-use is a high-quality and reliable Vue3 Hooks library.
 
+[![npm(tag)](https://img.shields.io/npm/v/v3-use/latest)](https://www.npmjs.com/package/v3-use) [![codecov](https://codecov.io/gh/ismufang/v3-use/branch/update-docs/graph/badge.svg?token=Q9ZA1I8PMB)](https://codecov.io/gh/ismufang/v3-use)
+
 ## Install
 
 ```bash
