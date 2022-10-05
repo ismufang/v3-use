@@ -12,6 +12,7 @@ const App = defineComponent({
       default: 'test'
     }
   },
+  template: '<div></div>',
   setup(props) {
     useLogger('Demo', props)
   }
