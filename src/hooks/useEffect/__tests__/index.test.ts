@@ -13,6 +13,7 @@ describe('useEffect', () => {
           default: 'test'
         }
       },
+      template: '<div></div>',
       setup(props) {
         useEffect(() => {
           console.log('update', props)
@@ -37,6 +38,7 @@ describe('useEffect', () => {
           default: 'test'
         }
       },
+      template: '<div></div>',
       setup() {
         useEffect(() => {
           console.log('mounted')
@@ -69,6 +71,7 @@ describe('useEffect', () => {
           default: 'apple'
         }
       },
+      template: '<div></div>',
       setup(props) {
         useEffect(() => {
           console.log('update', props.name)

@@ -5,8 +5,8 @@ import { delay } from '../../utils/testingHelpers'
 describe('useInterval', () => {
   it('options: immediate = true', async () => {
     const fn = vi.fn()
-    useInterval(fn, 1000, { immediate: true })
-    await delay(2000)
+    useInterval(fn, 100, { immediate: true })
+    await delay(120)
     expect(fn).toBeCalledTimes(2)
   })
 
@@ -18,11 +18,11 @@ describe('useInterval', () => {
 
   it('can use Acitons', async () => {
     const fn = vi.fn()
-    const { run, destroy } = useInterval(fn, 1000)
-    await delay(2000)
+    const { run, destroy } = useInterval(fn, 100)
+    await delay(120)
     expect(fn).toBeCalledTimes(0)
     run()
-    await delay(1200)
+    await delay(120)
     expect(fn).toBeCalledTimes(1)
     run(true)
     expect(fn).toBeCalledTimes(1)
@@ -31,7 +31,7 @@ describe('useInterval', () => {
     destroy()
     run(true)
     expect(fn).toBeCalledTimes(2)
-    await delay(2000)
+    await delay(120)
     expect(fn).toBeCalledTimes(3)
   })
 })

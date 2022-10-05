@@ -16,6 +16,7 @@ describe('useTitle', () => {
   it('should restore document title on unmount', async () => {
     const wrapper = mount(
       defineComponent({
+        template: '<div></div>',
         setup() {
           document.title = 'page'
           const [title, setTitle] = useTitle(document.title, {
@@ -30,7 +31,7 @@ describe('useTitle', () => {
         }
       })
     )
-    await delay(1000)
+    await delay(100)
     expect(document.title).toBe('page1')
     await wrapper.unmount()
     expect(document.title).toBe('page')

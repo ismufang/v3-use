@@ -9,6 +9,7 @@ const App = defineComponent({
       default: 'test'
     }
   },
+  template: '<div></div>',
   setup() {
     const isFirst = useFirstMountState()
     return {

@@ -6,11 +6,12 @@ describe('useCountDown', () => {
   it('cant not work without defaultTimeLeft or start(time = 0)', async () => {
     const onEnd = vi.fn()
     const [countdown, { start, stop }] = useCountDown({
+      interval: 100,
       onEnd
     })
     start()
     expect(countdown.value).toBe(0)
-    delay(1200)
+    delay(120)
     expect(countdown.value).toBe(0)
     stop()
     expect(onEnd).toBeCalledTimes(0)
@@ -18,19 +19,20 @@ describe('useCountDown', () => {
 
   it('options: format', async () => {
     const [timeLeft, { start }] = useCountDown({
+      interval: 100,
       defaultTimeLeft: 10,
       format: c => `timeLeft: ${c}`
     })
     expect(timeLeft.value).toBe('timeLeft: 10')
     start(10)
-    await delay(1200)
+    await delay(120)
     expect(timeLeft.value).toBe('timeLeft: 9')
   })
 
   it('should work by actions', async () => {
     const onEnd = vi.fn()
     const [countdown, { start, pause, play, stop }] = useCountDown({
-      interval: 1000,
+      interval: 100,
       step: 1,
       defaultTimeLeft: 10,
       onEnd
@@ -38,11 +40,11 @@ describe('useCountDown', () => {
     expect(countdown.value).toBe(10)
     start()
     expect(countdown.value).toBe(10)
-    await delay(1200)
+    await delay(120)
     pause()
     expect(countdown.value).toBe(9)
     play()
-    await delay(1200)
+    await delay(120)
     expect(countdown.value).toBe(8)
     stop()
     await delay(0)
