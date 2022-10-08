@@ -5,7 +5,7 @@ import { hookNames } from '../metadata'
 
 export function markdownTransform(): Plugin {
   return {
-    name: 'vueuse-md-transform',
+    name: 'vue-md-transform',
     enforce: 'pre',
     async transform(code, id) {
       if (!id.match(/\.md\b/)) return

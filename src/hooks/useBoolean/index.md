@@ -12,11 +12,7 @@ const [state, { toggle, setFalse, setTrue }] = useBoolean()
 ## Reference
 
 ```ts
-const [state, {
-  toggle,
-  setFalse,
-  setTrue
-}] = useBoolean(defaultValue?: boolean)
+const [state, actions] = useBoolean(defaultValue?: boolean)
 ```
 
 ### Type Declarations
