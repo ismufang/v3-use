@@ -11,8 +11,7 @@ const [state, { inc, dec, set, reset }] = useCounter(0)
 ## Reference
 
 ```ts
-const [state, { inc, dec, set, reset }] = useCounter(initialValue?: number,
-  options?: Options)
+const [state, actions] = useCounter(initialValue?: number, options?: Options)
 ```
 
 ### Type Declarations

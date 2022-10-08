@@ -14,6 +14,10 @@ const { run, destroy } = useTimeout(() => {
 
 ## Reference
 
+```ts
+const actions = useTimeout(fn: () => void, delay: number)
+```
+
 ### Type Declarations
 
 ```ts

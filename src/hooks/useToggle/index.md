@@ -12,7 +12,7 @@ const [state, { toggle, set, setLeft, setRight }] = useToggle('L', 'R')
 ## Reference
 
 ```ts
-const [state, { toggle, set, setLeft, setRight }] = useToggle<T, R>(defaultValue?: T, reverseValue?: R)
+const [state, actions] = useToggle<T, R>(defaultValue?: T, reverseValue?: R)
 ```
 
 ### Type Declarations

@@ -19,7 +19,7 @@ const [timeLeft, { start, pause, play, stop }] = useCountDown({
 ## Reference
 
 ```ts
-const [timeLeft, { start, pause, play, stop }] = useCountDown<T>(options?: Options)
+const [timeLeft, actions] = useCountDown<T>(options?: Options)
 ```
 
 ### Type Declarations
