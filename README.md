@@ -35,6 +35,7 @@ const [state, { toggle, setFalse, setTrue }] = useBoolean()
   - [`useCounter`](./src/hooks/useCounter/index.md) &mdash; 管理计数器的 Hook
   - [`useMethods`](./src/hooks/useMethods/index.md) &mdash; 一个 useReducer 简化版的 Hook
   - [`useCountDown`](./src/hooks/useCountDown/index.md) &mdash; 一个用于管理倒计时的 Hook
+  - [`usePolling`](./src/hooks/usePolling/index.md) &mdash; 一个用于管理轮询的 Hook
 
 - **Dom**
 
