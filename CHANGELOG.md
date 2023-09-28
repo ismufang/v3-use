@@ -1,3 +1,9 @@
+## [1.1.0](https://github.com/ismufang/v3-use/compare/v1.0.29...v1.1.0) (2023-09-28)
+
+### Features
+
+- **hook:** add usePolling ([66d28f8](https://github.com/ismufang/v3-use/commit/66d28f848f59cbf3cf87fccdff11f8bdfc8c1a0f))
+
 ### [1.0.29](https://github.com/ismufang/v3-use/compare/v1.0.27...v1.0.29) (2022-10-08)
 
 ### Bug Fixes
