@@ -36,6 +36,10 @@
     "dir": "/hooks/useMethods/"
   },
   {
+    "name": "usePolling",
+    "dir": "/hooks/usePolling/"
+  },
+  {
     "name": "useReducer",
     "dir": "/hooks/useReducer/"
   },
