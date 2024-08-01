@@ -29,6 +29,7 @@ const [state, { toggle, setFalse, setTrue }] = useBoolean()
   - [`useReducer`](./src/hooks/useReducer/index.md) &mdash; 适用于复杂状态管理的 Hook
   - [`useToggle`](./src/hooks/useToggle/index.md) &mdash; 用于在两个状态值间切换的 Hook
   - [`useBoolean`](./src/hooks/useBoolean/index.md) &mdash; 管理 boolean 值的 Hook
+  - [`useDefault`](./src/hooks/useDefault/index.md) &mdash; 当 state 为`null`或`undefined`时返回默认值
 
 - **Scene**
 

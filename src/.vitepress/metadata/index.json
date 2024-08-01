@@ -12,6 +12,10 @@
     "dir": "/hooks/useCounter/"
   },
   {
+    "name": "useDefault",
+    "dir": "/hooks/useDefault/"
+  },
+  {
     "name": "useEffect",
     "dir": "/hooks/useEffect/"
   },
