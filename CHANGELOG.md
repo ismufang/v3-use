@@ -1,3 +1,9 @@
+### [1.1.1](https://github.com/ismufang/v3-use/compare/v1.1.0...v1.1.1) (2024-08-01)
+
+### Features
+
+- **hook:** add useDefault ([05fa318](https://github.com/ismufang/v3-use/commit/05fa318fa04b34017978e606b1a4fe419fd78862))
+
 ## [1.1.0](https://github.com/ismufang/v3-use/compare/v1.0.29...v1.1.0) (2023-09-28)
 
 ### Features
