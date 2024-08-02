@@ -38,9 +38,10 @@ const [state, { toggle, setFalse, setTrue }] = useBoolean()
   - [`useCountDown`](./src/hooks/useCountDown/index.md) &mdash; 一个用于管理倒计时的 Hook
   - [`usePolling`](./src/hooks/usePolling/index.md) &mdash; 一个用于管理轮询的 Hook
 
-- **Dom**
+- **Browser**
 
   - [`useTitle`](./src/hooks/useTitle/index.md) &mdash; 用于设置页面标题的 Hook
+  - [`useEventListener`](./src/hooks/useEventListener/index.md) &mdash; 封装 EventListener
 
 - **Effect**
 

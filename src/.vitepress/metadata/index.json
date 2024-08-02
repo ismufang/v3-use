@@ -24,6 +24,10 @@
     "dir": "/hooks/useEffectOnce/"
   },
   {
+    "name": "useEventListener",
+    "dir": "/hooks/useEventListener/"
+  },
+  {
     "name": "useFirstMountState",
     "dir": "/hooks/useFirstMountState/"
   },
