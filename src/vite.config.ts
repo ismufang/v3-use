@@ -1,8 +1,9 @@
 import { resolve } from 'path'
 import { defineConfig } from 'vite'
-import { markdownTransform } from './.vitepress/plugins/markdownTransform'
+import { mdVueDemo } from './.vitepress/plugins/mdVueDemo'
+import Components from 'unplugin-vue-components/vite'
 
-export default defineConfig(async () => {
+export default defineConfig(() => {
   return {
     server: {
       hmr: {
@@ -12,7 +13,19 @@ export default defineConfig(async () => {
         allow: [resolve(__dirname, '..')]
       }
     },
-    plugins: [markdownTransform()],
+    plugins: [
+      mdVueDemo({
+        containerCompName: 'DemoContainer',
+        autoDemo: true,
+        sourceUrl: 'https://github.com/ismufang/v3-use/blob/main/',
+        root: 'src'
+      }),
+      Components({
+        dirs: resolve(__dirname, './.vitepress/theme/components'),
+        include: [/\.vue$/, /\.md$/],
+        dts: resolve(__dirname, './.vitepress/components.d.ts')
+      })
+    ],
     resolve: {
       alias: {
         'v3-use': resolve(__dirname, 'hooks/index.ts')
