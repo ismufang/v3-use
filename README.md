@@ -37,6 +37,7 @@ const [state, { toggle, setFalse, setTrue }] = useBoolean()
   - [`useMethods`](./src/hooks/useMethods/index.md) &mdash; 一个 useReducer 简化版的 Hook
   - [`useCountDown`](./src/hooks/useCountDown/index.md) &mdash; 一个用于管理倒计时的 Hook
   - [`usePolling`](./src/hooks/usePolling/index.md) &mdash; 一个用于管理轮询的 Hook
+  - [`useStepper`](./src/hooks/useStepper/index.md) &mdash; 管理步骤器的 Hook
 
 - **Browser**
 

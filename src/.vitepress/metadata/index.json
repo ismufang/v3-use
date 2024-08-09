@@ -56,6 +56,10 @@
     "dir": "/hooks/useState/"
   },
   {
+    "name": "useStepper",
+    "dir": "/hooks/useStepper/"
+  },
+  {
     "name": "useTimeout",
     "dir": "/hooks/useTimeout/"
   },
