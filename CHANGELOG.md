@@ -1,3 +1,10 @@
+### [1.1.2](https://github.com/ismufang/v3-use/compare/v1.1.1...v1.1.2) (2024-08-09)
+
+### Features
+
+- **hook:** add useEventListener ([162d598](https://github.com/ismufang/v3-use/commit/162d5988fb644530b839fe9cecebf50c06420175))
+- **hook:** add useStepper ([d1ac61b](https://github.com/ismufang/v3-use/commit/d1ac61b9ab2f38c9107bfcdbc8fe97d1eedbfa61))
+
 ### [1.1.1](https://github.com/ismufang/v3-use/compare/v1.1.0...v1.1.1) (2024-08-01)
 
 ### Features
